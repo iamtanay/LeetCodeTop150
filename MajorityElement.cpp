@@ -11,28 +11,28 @@ element always exists in the array.
 #include <bits/stdc++.h>
 
 int majorityElement(std::vector<int>& nums) {
-        std::sort(nums.begin(), nums.end());
-        for(int i =0; i<nums.size(); i++) {
-            std::cout << nums[i] << " ";
-        }
-        int val = nums[0];
-        int count = 0;
-        int max = 0; 
-        int maxnum = val;
-        for(int i = 0; i < nums.size(); i++) {
-            if(nums[i] != val) {
-                                val = nums[i];
-                count = 1;
-            } else {
-                count++;
-                if(count > max) {
-                    max = count;
-                    maxnum = val;
-                }
+    std::sort(nums.begin(), nums.end());
+    for(int i =0; i<nums.size(); i++) {
+        std::cout << nums[i] << " ";
+    }
+    int val = nums[0];
+    int count = 0;
+    int max = 0; 
+    int maxnum = val;
+    for(int i = 0; i < nums.size(); i++) {
+        if(nums[i] != val) {
+            val = nums[i];
+            count = 1;
+        } else {
+            count++;
+            if(count > max) {
+                max = count;
+                maxnum = val;
             }
         }
-        return maxnum;
     }
+    return maxnum;
+}
 
 int main()
 {
